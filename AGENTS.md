@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Charlie Experience Lab is a frontend-only UX prototype: all data lives in src/lib/charlie (synthetic) and conversation responses are scripted in src/lib/charlie/script.ts; no backend, auth or external APIs.
+- Chat UI pieces live in src/components/charlie/blocks.tsx and are reused by both /workspace and /componentes so the gallery always shows the real components.
