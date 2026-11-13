@@ -9,6 +9,8 @@ export const Route = createFileRoute("/decisiones")({
       { name: "description", content: "Guía de evaluación con trade-offs y propuestas de diseño para Charlie, pendientes de validación." },
       { property: "og:title", content: "Decisiones de experiencia · Charlie" },
       { property: "og:description", content: "Trade-offs y propuestas de diseño para Charlie, pendientes de validación." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Decisiones,
@@ -47,7 +49,7 @@ function Decisiones() {
                 <Pill tone="warn">Propuesta · sin aprobar</Pill>
               </div>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl bg-primary-soft p-4"><p className="eyebrow text-primary">Proponemos</p><p className="mt-1 font-medium">{d.a}</p></div>
+                <div className="rounded-xl bg-primary-soft p-4"><p className="eyebrow text-primary-text">Proponemos</p><p className="mt-1 font-medium">{d.a}</p></div>
                 <div className="rounded-xl bg-surface p-4"><p className="eyebrow">Alternativa descartada</p><p className="mt-1 text-muted-foreground">{d.b}</p></div>
               </div>
               <dl className="mt-4 grid gap-3 text-sm md:grid-cols-2">

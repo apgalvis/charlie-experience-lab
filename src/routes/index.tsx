@@ -10,6 +10,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Narrativa, principios y emociones que guían la experiencia de Charlie, asistente interno de soporte y operaciones." },
       { property: "og:title", content: "Cómo debe sentirse Charlie" },
       { property: "og:description", content: "Narrativa, principios y emociones que guían la experiencia de Charlie." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -56,7 +58,7 @@ function Index() {
             {ROLES.map((r) => (
               <figure key={r.role} className="bg-card p-6">
                 <blockquote className="text-[15px] leading-relaxed">“{r.quote}”</blockquote>
-                <figcaption className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">{r.role}</figcaption>
+                <figcaption className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary-text">{r.role}</figcaption>
               </figure>
             ))}
           </div>

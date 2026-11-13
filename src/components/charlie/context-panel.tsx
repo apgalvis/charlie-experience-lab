@@ -62,7 +62,7 @@ export function ContextPanel({ msg, persona, techAllowed, onTechAllowed, onNext 
       </Card>
 
       <Card title="Próximo paso" className="border-primary/25">
-        <button onClick={onNext} className="group flex w-full items-center justify-between gap-2 text-left text-sm font-medium text-primary">
+        <button onClick={onNext} className="group flex w-full items-center justify-between gap-2 text-left text-sm font-medium text-primary-text">
           {msg.ctx.next}<ArrowRight className="size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
         </button>
       </Card>

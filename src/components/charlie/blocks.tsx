@@ -14,7 +14,7 @@ import { makeProperties } from "@/lib/charlie/data";
 export function Pill({ tone = "neutral", children, className }: { tone?: "neutral" | "ok" | "warn" | "err" | "info"; children: React.ReactNode; className?: string }) {
   const tones = {
     neutral: "bg-muted text-muted-foreground",
-    ok: "bg-primary-soft text-primary",
+    ok: "bg-primary-soft text-primary-text",
     warn: "bg-warning-soft text-warning-foreground",
     err: "bg-destructive-soft text-destructive",
     info: "bg-accent text-foreground",
@@ -97,7 +97,7 @@ export interface Diagnosis {
 export function DiagnosisSummary({ d }: { d: Diagnosis }) {
   const conf = { alta: { tone: "ok" as const, t: "Confianza alta" }, media: { tone: "warn" as const, t: "Confianza media" }, baja: { tone: "warn" as const, t: "Confianza baja" } }[d.confidence];
   return (
-    <BlockShell title="Lo que encontramos" aside={<Pill tone={conf.tone}>{conf.t}</Pill>}>
+    <BlockShell className="bg-primary-soft" title="Lo que encontramos" aside={<Pill tone={conf.tone}>{conf.t}</Pill>}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <p className="eyebrow mb-1.5">Hechos confirmados</p>
@@ -130,7 +130,7 @@ export function NextBestAction({ title, detail, cta, onCta }: { title: string; d
   return (
     <div className="flex flex-col gap-3 rounded-xl border border-primary/25 bg-primary-soft p-4 sm:flex-row sm:items-center sm:justify-between">
       <div>
-        <p className="eyebrow text-primary">Siguiente mejor acción</p>
+        <p className="eyebrow text-primary-text">Siguiente mejor acción</p>
         <p className="mt-0.5 text-sm font-semibold">{title}</p>
         <p className="text-sm text-muted-foreground">{detail}</p>
       </div>
@@ -363,7 +363,7 @@ export function ChartWithInsight({ data }: { data: { week: string; value: number
       <dl className="mb-3 grid grid-cols-3 gap-3 text-sm">
         <div><dt className="text-xs text-muted-foreground">4 semanas previas</dt><dd className="text-lg font-semibold tabular-nums">{prev}</dd></div>
         <div><dt className="text-xs text-muted-foreground">Últimas 4 semanas</dt><dd className="text-lg font-semibold tabular-nums">{recent}</dd></div>
-        <div><dt className="text-xs text-muted-foreground">Variación</dt><dd className="text-lg font-semibold tabular-nums text-primary">+{delta} %</dd></div>
+        <div><dt className="text-xs text-muted-foreground">Variación</dt><dd className="text-lg font-semibold tabular-nums text-primary-text">+{delta} %</dd></div>
       </dl>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={`Leads por semana. Previas suman ${prev}, recientes ${recent}, variación de ${delta} por ciento.`}>
         {[0, max / 2, max].map((t) => (

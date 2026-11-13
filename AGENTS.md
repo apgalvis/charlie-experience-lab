@@ -32,3 +32,4 @@ use the editor.
 ## Project rules
 - Charlie Experience Lab is a frontend-only UX prototype: all data lives in src/lib/charlie (synthetic) and conversation responses are scripted in src/lib/charlie/script.ts; no backend, auth or external APIs.
 - Chat UI pieces live in src/components/charlie/blocks.tsx and are reused by both /workspace and /componentes so the gallery always shows the real components.
+- Define shared semantic color roles in src/styles.css, separating brand fills, accessible text, and sidebar foregrounds so every page shares the palette without compromising contrast.

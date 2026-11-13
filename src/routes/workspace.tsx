@@ -17,6 +17,8 @@ export const Route = createFileRoute("/workspace")({
       { name: "description", content: "Demostración interactiva de una conversación con Charlie por rol y escenario, con datos sintéticos." },
       { property: "og:title", content: "Workspace · Charlie Experience Lab" },
       { property: "og:description", content: "Demostración interactiva de una conversación con Charlie por rol y escenario." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Workspace,
@@ -95,7 +97,7 @@ function Workspace() {
           </Field>
           <div className="ml-auto flex items-center gap-2">
             <Pill className="hidden font-mono sm:inline-flex">datos sintéticos</Pill>
-            <Button variant="ghost" size="sm" onClick={reset}><RotateCcw className="size-3.5" />Reiniciar</Button>
+            <Button size="sm" onClick={reset}><RotateCcw className="size-3.5" />Reiniciar</Button>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="sm" className="lg:hidden"><PanelRight className="size-3.5" />Contexto</Button>

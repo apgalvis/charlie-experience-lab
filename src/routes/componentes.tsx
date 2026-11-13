@@ -17,6 +17,8 @@ export const Route = createFileRoute("/componentes")({
       { name: "description", content: "Galería de componentes de Charlie con propósito, estados, cuándo usar y anti-patrones." },
       { property: "og:title", content: "Atelier de componentes · Charlie" },
       { property: "og:description", content: "Componentes de Charlie con propósito, estados y anti-patrones." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Componentes,
@@ -88,7 +90,7 @@ function Componentes() {
         <p className="mt-2 text-muted-foreground">El mismo caso ficticio, dos formas de presentarlo.</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl border bg-card p-4">
-            <Pill tone="err">Saturado</Pill>
+            <Pill tone="neutral">Saturado</Pill>
             <div className="mt-3 grid grid-cols-3 gap-1.5 text-[10px] text-muted-foreground">
               {["Score 72", "FID 0.84", "Login 3d", "Plan A", "Plan B", "Plan C", "48 props", "41 act.", "7 paus.", "Leads 312", "CTR 2.1", "Visitas 9k", "Condición OK", "Región N", "Ejecutivo X"].map((x) => <div key={x} className="rounded border bg-surface p-1.5">{x}</div>)}
             </div>
@@ -144,5 +146,5 @@ function SpecCard({ spec, mobile, notes }: { spec: Spec; mobile: boolean; notes:
 }
 
 function Note({ k, v, warn }: { k: string; v: string; warn?: boolean }) {
-  return <div><dt className={cn("eyebrow", warn && "text-destructive")}>{k}</dt><dd className="mt-0.5 text-muted-foreground">{v}</dd></div>;
+  return <div><dt className={cn("eyebrow", warn && "text-foreground")}>{k}</dt><dd className="mt-0.5 text-muted-foreground">{v}</dd></div>;
 }
